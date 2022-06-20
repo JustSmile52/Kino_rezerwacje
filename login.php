@@ -12,7 +12,7 @@
 
             session_start();
             $_SESSION['login']=$_POST['login'];
-            header("Location: main.php");
+            header("Location: repertuar.php");
             exit();
 
 
