@@ -72,7 +72,13 @@ $seansiki = $link->query("SELECT id, `tytul filmu` , zdjecie  FROM filmy ");
             // echo '<div class="czasy>';
             // echo '<p> </p>';
             // echo '</div>';
-             echo '<button class="godzina">'.$s['godzina'].'</button>';
+             echo ' <div>
+                    <form action="rezerwacje.php">
+                    <input type="hidden" name="id" value='.$rekord['id'].'>
+                    <input type="submit" class="godzina" value="'.$s['godzina'].'"/>
+                    </form>
+                    </div>';
+             
         }
         
 
