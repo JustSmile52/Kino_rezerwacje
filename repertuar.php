@@ -67,14 +67,14 @@ $seansiki = $link->query("SELECT id, `tytul filmu` , zdjecie  FROM filmy ");
         
         $id = $rekord['id'];
        
-        $godziny = $link->query("SELECT film , godzina  FROM seanse WHERE film = $id");
+        $godziny = $link->query("SELECT film , godzina, id  FROM seanse WHERE film = $id");
         while($s = $godziny->fetch_array()){
             // echo '<div class="czasy>';
             // echo '<p> </p>';
             // echo '</div>';
              echo ' <div>
                     <form action="rezerwacje.php">
-                    <input type="hidden" name="id" value='.$rekord['id'].'>
+                    <input type="hidden" name="id" value='.$s['id'].'>
                     <input type="submit" class="godzina" value="'.$s['godzina'].'"/>
                     </form>
                     </div>';

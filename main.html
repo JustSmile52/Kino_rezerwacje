@@ -1,3 +1,8 @@
+<?php
+session_start()
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +31,15 @@
             <b>Login:</b> <input type="text" name="login"><br><br>
             <b>Hasło:</b> <input type="password" name="haslo"><br>
             <input style="float:right; " type="submit" value="zaloguj" >
-            <a style="float: left;margin:2px"href = "register.html">Nie masz konta? zarejestruj się</a>
+            <?php
+            if(isset($_SESSION)){
+                echo "<a style='float: left;margin:2px' href='logout.php'>wyloguj</a>";
+            }
+            else{
+                echo "<a style='float: left;margin:2px' href='register.php'>Nie masz konta? zarejestruj się</a>";
+            }
+            ?>
+            
 
         </form>
             
@@ -40,3 +53,14 @@
     </div>
 </body>
 </html>
+<?php
+    if(isset($_GET['loggin_error'])){
+        if($_GET['loggin_error']==false){
+            echo "siema";
+        }
+    }
+    
+    if(isset($_SESSION)){
+        echo $_SESSION['login'];
+    }
+?>

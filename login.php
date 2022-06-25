@@ -12,12 +12,19 @@
 
             session_start();
             $_SESSION['login']=$_POST['login'];
-            header("Location: repertuar.php");
-            exit();
+            $_GET['loggin_error'] = true;
+            include('main.html');
+            //exit()
 
 
 
         }
-        else echo "haslo lub login nieprawidlowe";
+        else{
+            
+
+            $_GET['loggin_error'] = false;
+            include('main.html');
+            
+        }
     }
 ?>
