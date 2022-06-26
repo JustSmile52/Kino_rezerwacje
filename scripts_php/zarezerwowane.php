@@ -1,6 +1,6 @@
 <?php
-session_start();
-$link = new mysqli("localhost","root","", "bozek");
+
+require_once '../db/db.php';
 
 $seans =  $_SESSION['seans'];
 $login = $_SESSION['login'];
@@ -20,5 +20,5 @@ $link->query("INSERT INTO `rezerwacje`( `seans`, `uzytkownik`, `miejsce`) VALUES
 //     //mysqli_query($link,"INSERT INTO `rezerwacje` (`seans`, `usytkownik`,`miejsce`) VALUES ('".$seans."', '".$login."','".$cos."')");
    echo "<p>$cosik</p>";
  }
- header("Location: main.html");
+ header("Location: ../sites/main.php");
 ?>

@@ -62,3 +62,34 @@ margin:2px
     border: orange 3px solid;
     margin: 10px;
 }
+ .main {
+            
+            width: 650px;
+            height: 650px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding: 2px;
+            margin:0 auto
+        }
+
+        .unchecked {
+            width: 5%;
+            height: 5%;
+            background-color: green;
+            margin-right: 1px;
+            
+            
+        }
+        .checked {
+            width: 5%;
+            height: 5%;
+            background-color: lightgreen;
+             margin-right: 1px;
+        }
+        .czerwony {
+            width: 5%;
+            height: 5%;
+            background-color: red;
+             margin-right: 1px;
+        }
