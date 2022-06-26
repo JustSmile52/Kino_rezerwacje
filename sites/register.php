@@ -1,37 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+include_once('header.php')
+?>
+<h2 style="text-align:center">rejestracja</h2>
+<div class="register">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="../css/style.css">
-    </head>
+    <div class="rejestrator">
+        <form method="POST" action="../scripts_php/rejestracja.php">
+            <b>Login:</b> <input type="text" name="login"><br><br>
+            <b>Hasło:</b> <input type="password" name="haslo1"><br>
+            <b>Powtórz hasło:</b> <input type="password" name="haslo2"><br>
+            <button type="submit" name="submit" value="submit">zarejestruj</button>
+        </form>
+        <a href="../sites/main.php">powrót do strony głównej</a>
+    </div>
 
-    <body>
-        <header class="header">
-            <div>
-                <h1 class="logo">KINO</h1>
+</div>
 
+<?php
+    if(isset($_GET['error'])){
+        if($_GET['error']=="none"){
+            echo"Dodano użytkownika";   
+        }
+        if($_GET['error']=="emptyInput"){
+            echo"Uzupełnij wszystkie pola!";   
+        }
+        if($_GET['error']=="pwdMatching"){
+            echo"hasła nie są takie same";   
+        }
+        if($_GET['error']=="loginAlreadyExists"){
+            echo"użytkownik o takiej nazwie już istnieje";   
+        }
+    }
 
-            </div>
-
-        </header>
-        <h2 style="text-align:center">rejestracja</h2>
-        <div class="register">
-
-            <div class="rejestrator">
-                <form method="POST" action="../scripts_php/rejestracja.php">
-                    <b>Login:</b> <input type="text" name="login"><br><br>
-                    <b>Hasło:</b> <input type="password" name="haslo1"><br>
-                    <b>Powtórz hasło:</b> <input type="password" name="haslo2"><br>
-                    <button type="submit" name="submit" value="submit">zarejestruj</button>
-                </form>
-                <a href="../sites/main.php">powrót do strony głównej</a>
-            </div>
-
-        </div>
-    </body>
+?>
+</body>
 
 </html>

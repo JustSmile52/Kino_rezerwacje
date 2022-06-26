@@ -31,5 +31,5 @@
  function createUser($link, $login, $pwd){
     mysqli_query($link,"INSERT INTO `uzytkownicy` (`login`, `haslo`)
         VALUES ('".$login."', '".md5($pwd)."')");  
-    header('location: ../sites/main.php');
+    header('location: ../sites/register.php?error=none');
  }
